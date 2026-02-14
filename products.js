@@ -1,36 +1,18 @@
-// Products Management - Fetches and displays products from Sanity CMS
+// Products Management - Displays products from local data file
 
-// Fetch products from Sanity API
-async function fetchProducts(category = null) {
-  try {
-    // Build GROQ query
-    let query = '*[_type == "product" && inStock == true] | order(_createdAt desc)';
+// Get products based on category filter
+function getProducts(category = null) {
+  let filteredProducts = PRODUCTS.filter(p => p.inStock);
 
-    if (category) {
-      query = `*[_type == "product" && inStock == true && category->slug.current == "${category}"] | order(_createdAt desc)`;
-    }
-
-    // Build API URL
-    const url = `https://${SANITY_CONFIG.projectId}.api.sanity.io/${SANITY_CONFIG.apiVersion}/data/query/${SANITY_CONFIG.dataset}?query=${encodeURIComponent(query)}`;
-
-    // Fetch data
-    const response = await fetch(url);
-
-    if (!response.ok) {
-      throw new Error(`HTTP error! status: ${response.status}`);
-    }
-
-    const data = await response.json();
-    return data.result || [];
-
-  } catch (error) {
-    console.error('Error fetching products:', error);
-    return [];
+  if (category) {
+    filteredProducts = filteredProducts.filter(p => p.category === category);
   }
+
+  return filteredProducts;
 }
 
 // Display products in the grid
-async function displayProducts(category = null) {
+function displayProducts(category = null) {
   const container = document.getElementById('products-grid');
 
   if (!container) {
@@ -38,18 +20,15 @@ async function displayProducts(category = null) {
     return;
   }
 
-  // Show loading state
-  container.innerHTML = '<div class="loading">טוען מוצרים...</div>';
-
-  // Fetch products
-  const products = await fetchProducts(category);
+  // Get products (filtered by category if specified)
+  const products = getProducts(category);
 
   // Clear container
   container.innerHTML = '';
 
   // Check if any products were returned
   if (products.length === 0) {
-    container.innerHTML = '<div class="no-products">אין מוצרים זמינים כרגע</div>';
+    container.innerHTML = '<div class="no-products">אין מוצרים זמינים בקטגוריה זו</div>';
     return;
   }
 
@@ -65,20 +44,16 @@ function createProductCard(product) {
   const card = document.createElement('div');
   card.className = 'product-card';
   card.setAttribute('dir', 'rtl');
-
-  // Get image URL
-  const imageUrl = product.image
-    ? getSanityImageUrl(product.image, 300, 300)
-    : 'https://via.placeholder.com/300x300?text=No+Image';
+  card.setAttribute('data-product-id', product.id);
 
   // Build card HTML
   card.innerHTML = `
-    <img src="${imageUrl}" alt="${product.nameHe || product.nameEn || 'Product'}" loading="lazy">
+    <img src="${product.image}" alt="${product.nameHe}" loading="lazy" onerror="this.src='https://via.placeholder.com/400x400?text=No+Image'">
     <div class="product-info">
-      <h3>${product.nameHe || product.nameEn || 'ללא שם'}</h3>
-      <p class="price">₪${product.price ? product.price.toFixed(2) : '0.00'}</p>
+      <h3>${product.nameHe}</h3>
+      <p class="price">₪${product.price.toFixed(2)}</p>
       ${product.descriptionHe ? `<p class="description">${product.descriptionHe}</p>` : ''}
-      <button class="add-to-cart-btn" data-product-id="${product._id}">
+      <button class="add-to-cart-btn" data-product-id="${product.id}">
         הוסף לסל
       </button>
     </div>
@@ -98,7 +73,16 @@ function createProductCard(product) {
 function handleAddToCart(product) {
   // This will be implemented when we add shopping cart functionality
   console.log('Adding to cart:', product);
-  alert(`${product.nameHe || product.nameEn} נוסף לסל!`);
+
+  // Show feedback to user
+  const feedback = `${product.nameHe} נוסף לסל!`;
+  alert(feedback);
+
+  // TODO: In the future, this will:
+  // - Add product to cart state
+  // - Update cart icon count
+  // - Show visual feedback (toast notification)
+  // - Save to localStorage
 }
 
 // Set up category filter buttons
@@ -124,12 +108,12 @@ function setupFilters() {
 
 // Initialize products when page loads
 document.addEventListener('DOMContentLoaded', () => {
-  // Check if Sanity config is set
-  if (SANITY_CONFIG.projectId === 'YOUR_PROJECT_ID') {
-    console.warn('⚠️ Please update SANITY_CONFIG.projectId in sanity-config.js');
+  // Check if products data is loaded
+  if (typeof PRODUCTS === 'undefined') {
+    console.error('Products data not loaded. Make sure products-data.js is included before products.js');
     const container = document.getElementById('products-grid');
     if (container) {
-      container.innerHTML = '<div class="no-products">אנא הגדר את Project ID של Sanity</div>';
+      container.innerHTML = '<div class="no-products">שגיאה בטעינת המוצרים</div>';
     }
     return;
   }
@@ -137,4 +121,6 @@ document.addEventListener('DOMContentLoaded', () => {
   // Display products and set up filters
   displayProducts();
   setupFilters();
+
+  console.log(`Loaded ${PRODUCTS.length} products across ${Object.keys(CATEGORIES).length} categories`);
 });

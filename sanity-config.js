@@ -2,7 +2,7 @@
 // Replace 'YOUR_PROJECT_ID' with your actual Sanity project ID
 
 const SANITY_CONFIG = {
-  projectId: 'YOUR_PROJECT_ID',  // Get this from https://sanity.io/manage
+  projectId: 'iwhzmcgm',  // Get this from https://sanity.io/manage
   dataset: 'production',
   apiVersion: 'v2021-10-21',
   useCdn: true  // Use CDN for faster response times

@@ -1,0 +1,179 @@
+// Product Catalog Data - ממתקי ינר
+// This file contains all products and categories for the candy shop
+
+// Product Categories
+const CATEGORIES = {
+  'pick-and-mix': {
+    nameHe: 'בחר ומזג',
+    nameEn: 'Pick & Mix',
+    slug: 'pick-and-mix'
+  },
+  'mixed-bags': {
+    nameHe: 'שקיות מעורבות',
+    nameEn: 'Mixed Bags',
+    slug: 'mixed-bags'
+  },
+  'personal-extras': {
+    nameHe: 'תוספות אישיות',
+    nameEn: 'Personal Extras',
+    slug: 'personal-extras'
+  },
+  'gift-ideas': {
+    nameHe: 'רעיונות למתנה',
+    nameEn: 'Gift Ideas',
+    slug: 'gift-ideas'
+  },
+  'holiday-specials': {
+    nameHe: 'מבצעי חגים',
+    nameEn: 'Holiday Specials',
+    slug: 'holiday-specials'
+  }
+};
+
+// Products Array
+const PRODUCTS = [
+  {
+    id: 1,
+    nameHe: 'גומי דובים',
+    nameEn: 'Gummy Bears',
+    descriptionHe: 'גומי דובים צבעוניים ומתוקים בטעמי פירות שונים',
+    descriptionEn: 'Colorful sweet gummy bears in various fruit flavors',
+    price: 12,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1582058091505-f87a2e55a40f?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: true
+  },
+  {
+    id: 2,
+    nameHe: 'סוכריות חמוציות',
+    nameEn: 'Sour Candies',
+    descriptionHe: 'סוכריות חמוצות מרעננות בציפוי סוכר',
+    descriptionEn: 'Refreshing sour candies with sugar coating',
+    price: 15,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1565765418-13e4a0325068?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 3,
+    nameHe: 'שוקולד חלב',
+    nameEn: 'Milk Chocolate',
+    descriptionHe: 'שוקולד חלב איכותי במילוי אגוזים',
+    descriptionEn: 'Premium milk chocolate with nut filling',
+    price: 25,
+    category: 'gift-ideas',
+    image: 'https://images.unsplash.com/photo-1511381939415-e44015466834?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: true
+  },
+  {
+    id: 4,
+    nameHe: 'מרשמלו ענק',
+    nameEn: 'Giant Marshmallows',
+    descriptionHe: 'מרשמלו רך וגדול בטעמי וניל ותות',
+    descriptionEn: 'Soft giant marshmallows in vanilla and strawberry flavors',
+    price: 18,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1563370418-10e3c86f5952?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 5,
+    nameHe: 'סוכרת צבעונית',
+    nameEn: 'Colorful Lollipops',
+    descriptionHe: 'סוכריות על מקל בצבעים עזים וטעמים מגוונים',
+    descriptionEn: 'Colorful lollipops with vibrant colors and various flavors',
+    price: 8,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1558954157-aa76c0d246c6?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 6,
+    nameHe: 'וופלים בציפוי שוקולד',
+    nameEn: 'Chocolate Coated Wafers',
+    descriptionHe: 'וופלים פריכים מצופים בשוקולד מריר',
+    descriptionEn: 'Crispy wafers coated in dark chocolate',
+    price: 20,
+    category: 'gift-ideas',
+    image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 7,
+    nameHe: 'שקית מעורבת קלאסית',
+    nameEn: 'Classic Mixed Bag',
+    descriptionHe: 'מגוון סוכריות ממתקים - מיקס מושלם לכל אירוע',
+    descriptionEn: 'Variety of candies and sweets - perfect mix for any occasion',
+    price: 35,
+    category: 'mixed-bags',
+    image: 'https://images.unsplash.com/photo-1575932444877-5106bee2a599?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: true
+  },
+  {
+    id: 8,
+    nameHe: 'ג׳לי פירות',
+    nameEn: 'Fruit Jellies',
+    descriptionHe: 'ג׳לי פירות רך בטעמים טבעיים',
+    descriptionEn: 'Soft fruit jellies with natural flavors',
+    price: 14,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1581798459219-c8f585c098b7?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 9,
+    nameHe: 'מתנה לחג',
+    nameEn: 'Holiday Gift Package',
+    descriptionHe: 'חבילת מתנה מיוחדת עם מבחר ממתקים לחגים',
+    descriptionEn: 'Special gift package with selection of holiday candies',
+    price: 50,
+    category: 'holiday-specials',
+    image: 'https://images.unsplash.com/photo-1513885535751-8b9238bd345a?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: true
+  },
+  {
+    id: 10,
+    nameHe: 'טופי קרמל',
+    nameEn: 'Caramel Toffee',
+    descriptionHe: 'טופי קרמל רך עם טעם עשיר',
+    descriptionEn: 'Soft caramel toffee with rich flavor',
+    price: 16,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 11,
+    nameHe: 'שקית ממתקים לימי הולדת',
+    nameEn: 'Birthday Candy Bag',
+    descriptionHe: 'שקית ממתקים מעוצבת במיוחד לימי הולדת',
+    descriptionEn: 'Specially designed candy bag for birthdays',
+    price: 40,
+    category: 'gift-ideas',
+    image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 12,
+    nameHe: 'סוכריות נענע',
+    nameEn: 'Mint Candies',
+    descriptionHe: 'סוכריות נענע מרעננות',
+    descriptionEn: 'Refreshing mint candies',
+    price: 10,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1626197578139-edaef3c7e7b9?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  }
+];
