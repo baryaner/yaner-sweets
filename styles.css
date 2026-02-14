@@ -20,7 +20,7 @@ body {
 
 /* Header */
 header {
-    background-color: #4a4a4a;
+    background-color: #811818;
     color: white;
     padding: 15px 0;
 }
@@ -46,12 +46,15 @@ header {
     font-weight: bold;
     letter-spacing: 2px;
     margin-bottom: 2px;
+    color: #FF8C42;
+    text-shadow: 0 2px 4px rgba(255, 140, 66, 0.3);
 }
 
 .logo-text p {
     font-size: 12px;
     opacity: 0.9;
     letter-spacing: 1px;
+    color: #FFB366;
 }
 
 .header-icons {
@@ -109,7 +112,7 @@ header {
 .hero {
     position: relative;
     height: 400px;
-    background: linear-gradient(135deg, #FFB6D9 0%, #FF85C0 50%, #FFA8D5 100%);
+    background: linear-gradient(135deg, #8b697a 0%, #ae2158 50%, #FFA8D5 100%);
     display: flex;
     align-items: center;
     justify-content: center;
