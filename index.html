@@ -87,6 +87,28 @@
         <p>משלוח באותו יום לפני 12:00 בצהריים א'-ו'</p>
     </div>
 
+    <!-- Products Section -->
+    <section class="products" id="products-section">
+        <div class="container">
+            <h2>המוצרים שלנו</h2>
+
+            <!-- Category Filters -->
+            <div class="category-filters">
+                <button class="filter-btn active" data-category="">הכל</button>
+                <button class="filter-btn" data-category="pick-and-mix">בחר ומזג</button>
+                <button class="filter-btn" data-category="mixed-bags">שקיות מעורבות</button>
+                <button class="filter-btn" data-category="personal-extras">תוספות אישיות</button>
+                <button class="filter-btn" data-category="gift-ideas">רעיונות למתנה</button>
+                <button class="filter-btn" data-category="holiday-specials">מבצעי חגים</button>
+            </div>
+
+            <!-- Products Grid -->
+            <div id="products-grid" class="products-grid">
+                <!-- Products will be dynamically inserted here by products.js -->
+            </div>
+        </div>
+    </section>
+
     <!-- Reservation Modal -->
     <div id="reservationModal" class="modal">
         <div class="modal-content">
@@ -221,5 +243,9 @@
             </div>
         </div>
     </footer>
+
+    <!-- Sanity CMS Scripts -->
+    <script src="sanity-config.js"></script>
+    <script src="products.js"></script>
 </body>
 </html>
