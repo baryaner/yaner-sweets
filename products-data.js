@@ -52,7 +52,7 @@ const PRODUCTS = [
     descriptionEn: 'Refreshing sour candies with sugar coating',
     price: 15,
     category: 'pick-and-mix',
-    image: 'https://images.unsplash.com/photo-1565765418-13e4a0325068?w=400&h=400&fit=crop',
+    image: 'https://d3m9l0v76dty0.cloudfront.net/system/photos/2522434/large/362d4e9349c224e26f1048e2a70c1a06.jpg',
     inStock: true,
     featured: false
   },
@@ -76,7 +76,7 @@ const PRODUCTS = [
     descriptionEn: 'Soft giant marshmallows in vanilla and strawberry flavors',
     price: 18,
     category: 'pick-and-mix',
-    image: 'https://images.unsplash.com/photo-1563370418-10e3c86f5952?w=400&h=400&fit=crop',
+    image: 'https://d3o5sihylz93ps.cloudfront.net/wp-content/uploads/2023/05/07162246/shutterstock_1892464693-Medium.jpg',
     inStock: true,
     featured: false
   },
@@ -100,7 +100,7 @@ const PRODUCTS = [
     descriptionEn: 'Crispy wafers coated in dark chocolate',
     price: 20,
     category: 'gift-ideas',
-    image: 'https://images.unsplash.com/photo-1585515320310-259814833e62?w=400&h=400&fit=crop',
+    image: 'https://static.wixstatic.com/media/30a029_8d81de7167304db787805dfa4272cad9~mv2.jpeg/v1/fill/w_1500,h_300,al_c,q_85,enc_avif,quality_auto/30a029_8d81de7167304db787805dfa4272cad9~mv2.jpeg',
     inStock: true,
     featured: false
   },
@@ -112,7 +112,7 @@ const PRODUCTS = [
     descriptionEn: 'Variety of candies and sweets - perfect mix for any occasion',
     price: 35,
     category: 'mixed-bags',
-    image: 'https://images.unsplash.com/photo-1575932444877-5106bee2a599?w=400&h=400&fit=crop',
+    image: 'https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/mixed-candies-munir-alawi.jpg',
     inStock: true,
     featured: true
   },
