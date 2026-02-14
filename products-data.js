@@ -34,7 +34,7 @@ const CATEGORIES = {
 const PRODUCTS = [
   {
     id: 1,
-    nameHe: 'גומי דובים',
+    nameHe: 'דובוני גומי',
     nameEn: 'Gummy Bears',
     descriptionHe: 'גומי דובים צבעוניים ומתוקים בטעמי פירות שונים',
     descriptionEn: 'Colorful sweet gummy bears in various fruit flavors',
@@ -46,7 +46,7 @@ const PRODUCTS = [
   },
   {
     id: 2,
-    nameHe: 'סוכריות חמוציות',
+    nameHe: 'סוכריות חמוצות',
     nameEn: 'Sour Candies',
     descriptionHe: 'סוכריות חמוצות מרעננות בציפוי סוכר',
     descriptionEn: 'Refreshing sour candies with sugar coating',
