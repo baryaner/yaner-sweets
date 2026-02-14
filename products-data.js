@@ -81,18 +81,6 @@ const PRODUCTS = [
     featured: false
   },
   {
-    id: 5,
-    nameHe: 'סוכרת צבעונית',
-    nameEn: 'Colorful Lollipops',
-    descriptionHe: 'סוכריות על מקל בצבעים עזים וטעמים מגוונים',
-    descriptionEn: 'Colorful lollipops with vibrant colors and various flavors',
-    price: 8,
-    category: 'pick-and-mix',
-    image: 'https://images.unsplash.com/photo-1558954157-aa76c0d246c6?w=400&h=400&fit=crop',
-    inStock: true,
-    featured: false
-  },
-  {
     id: 6,
     nameHe: 'וופלים בציפוי שוקולד',
     nameEn: 'Chocolate Coated Wafers',
@@ -117,18 +105,6 @@ const PRODUCTS = [
     featured: true
   },
   {
-    id: 8,
-    nameHe: 'ג׳לי פירות',
-    nameEn: 'Fruit Jellies',
-    descriptionHe: 'ג׳לי פירות רך בטעמים טבעיים',
-    descriptionEn: 'Soft fruit jellies with natural flavors',
-    price: 14,
-    category: 'pick-and-mix',
-    image: 'https://images.unsplash.com/photo-1581798459219-c8f585c098b7?w=400&h=400&fit=crop',
-    inStock: true,
-    featured: false
-  },
-  {
     id: 9,
     nameHe: 'מתנה לחג',
     nameEn: 'Holiday Gift Package',
@@ -148,7 +124,7 @@ const PRODUCTS = [
     descriptionEn: 'Soft caramel toffee with rich flavor',
     price: 16,
     category: 'pick-and-mix',
-    image: 'https://images.unsplash.com/photo-1481391243133-f96216dcb5d2?w=400&h=400&fit=crop',
+    image: 'https://www.mashed.com/img/gallery/how-are-toffee-and-caramel-different/intro-1608641383.jpg',
     inStock: true,
     featured: false
   },
@@ -160,7 +136,31 @@ const PRODUCTS = [
     descriptionEn: 'Specially designed candy bag for birthdays',
     price: 40,
     category: 'gift-ideas',
-    image: 'https://images.unsplash.com/photo-1567401893414-76b7b1e5a7a5?w=400&h=400&fit=crop',
+    image: 'https://fyf.tac-cdn.net/images/products/large/C-119.jpg?auto=webp&quality=80&width=690',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 5,
+    nameHe: 'סוכרת צבעונית',
+    nameEn: 'Colorful Lollipops',
+    descriptionHe: 'סוכריות על מקל בצבעים עזים וטעמים מגוונים',
+    descriptionEn: 'Colorful lollipops with vibrant colors and various flavors',
+    price: 8,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1558954157-aa76c0d246c6?w=400&h=400&fit=crop',
+    inStock: true,
+    featured: false
+  },
+  {
+    id: 8,
+    nameHe: 'ג׳לי פירות',
+    nameEn: 'Fruit Jellies',
+    descriptionHe: 'ג׳לי פירות רך בטעמים טבעיים',
+    descriptionEn: 'Soft fruit jellies with natural flavors',
+    price: 14,
+    category: 'pick-and-mix',
+    image: 'https://images.unsplash.com/photo-1581798459219-c8f585c098b7?w=400&h=400&fit=crop',
     inStock: true,
     featured: false
   },
